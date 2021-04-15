@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Quotes{% endblock %}
+
+{% block body %}
+    <style>
+        .wrapper {
+            margin: 1em auto;
+            width: 95%;
+        }
+    </style>
+
+    <div class="wrapper">
+        <table class="table table-striped table-hover table-bordered">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Quote</th>
+                <th scope="col">Historian</th>
+                <th scope="col">Year</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for quote in quotes %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ quote.quote }}</td>
+                    <td>{{ quote.historian }}</td>
+                    <td>{{ quote.year }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
